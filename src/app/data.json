@@ -1,0 +1,24 @@
+
+ {
+      
+     "todo" :[
+        { "taskname": " make a new post " , "task_discription" :" string"},
+        {  "taskname" : "make a prototype"  ,  "task_discription":" string" }],
+  
+    "doing" :[
+        { "taskname " : "check design material" , "task_discription" : " string"},
+        { "taskname " : "check design material" , "task_discription" : " string"} ],
+
+    "underreview":[
+        {"taskname " : "Discuss your budget" , "task_discription" : " string" },
+        {"taskname " : "content plan" , "task_discription" : " string"}],
+
+        
+    "done":[
+        {"taskname " : "weekly planning meeting" , "task_discription" : " string"},
+        { "taskname " : "discuss a new concept" , "task_discription" : " string"},
+        { "taskname " : "discuss month budget" , "task_discription" : " string"}]
+  }
+ 
+
+

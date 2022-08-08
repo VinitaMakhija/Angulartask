@@ -1,0 +1,90 @@
+<div class="col-md-7">
+    <h1 style="font-weight:bold;     margin-top: 35px">Boards</h1>
+</div>
+<div class="row" style="margin-bottom: 15px">
+    <div class="col-md-7">
+
+        <input type="label" matInput placeholder="BaroneLLC >" style="    height: 35px;
+            border-radius: 25px;
+            border-color: white ; color: black;">
+
+
+    </div>
+    <div class="col-md-3">
+
+        <input type="text" matInput placeholder="Search" style="    height: 35px;
+                border-radius: 25px;
+                border-color: white">
+
+    </div>
+    <div class="col-md-1">
+        <img src="/assets/user.jpg" style="width: 35px; height: 35px; border-radius: 25px;">
+    </div>
+
+</div>
+
+
+<div class="row">
+    <div class="col-sm-3" cdkDropListGroup>
+        <h4> To do  +</h4>
+
+        <div class="list" cdkDropList #todoList="cdkDropList" [cdkDropListData]=todo
+            [cdkDropListConnectedTo]="[doList , reviewList, doneList ] " (cdkDropListDropped)="ondrop($event)">
+            <mat-card class="list" *ngFor="let item of todo" cdkDrag style="margin: 0 0 15px 0; ">
+                <mat-card-header>
+
+                </mat-card-header>
+                <mat-card-content >item.discription</mat-card-content>
+            </mat-card>
+
+        </div>
+    </div>
+
+    <div class="col-sm-3" cdkDropListGroup>
+        <h4> Doing +</h4>
+        <div class="list" #doList="cdkDropList" cdkDropList
+            [cdkDropListConnectedTo]="[todoList , reviewList , doneList]" [cdkDropListData]=doing
+            (cdkDropListDropped)="ondrop($event)">
+
+            <mat-card class="list" *ngFor="let item of doing" cdkDrag style="margin: 0 0 15px 0;">
+                <mat-card-header>
+                    <mat-card-title>{{item|keyvalue}}</mat-card-title>
+                </mat-card-header>
+            <mat-card-content>item|keyvalue</mat-card-content>
+
+            </mat-card>
+
+        </div>
+    </div>
+
+    <div class="col-sm-3" cdkDropListGroup>
+        <h4>Under review +</h4>
+        <div class="list" #reviewList="cdkDropList" cdkDropList [cdkDropListData]=underreview
+            [cdkDropListConnectedTo]="[todoList , doList , doneList]" (cdkDropListDropped)="ondrop($event)">
+
+            <mat-card class="list" *ngFor="let item of underreview" cdkDrag style="margin: 0 0 15px 0;">
+                <mat-card-header>
+                    <mat-card-title>{{item|keyvalue}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>{{item|keyvalue|keyvalue}}</mat-card-content>
+
+            </mat-card>
+
+        </div>
+    </div>
+    <div class="col-sm-3" cdkDropListGroup>
+        <h4> Done +</h4>
+        <div class="list" #doneList="cdkDropList" cdkDropList [cdkDropListData]=done
+            [cdkDropListConnectedTo]="[todoList , reviewList , doList]" (cdkDropListDropped)="ondrop($event)">
+
+            <mat-card class="list" *ngFor="let item of done" cdkDrag style="margin: 0 0 15px 0;">
+                <mat-card-header>
+                    <mat-card-title> {{item|keyvalue}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>{{item|keyvalue}}</mat-card-content>
+            </mat-card>
+
+        </div>
+
+    </div>
+</div>

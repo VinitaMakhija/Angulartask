@@ -1,0 +1,17 @@
+.dot :hover{
+    color: white;
+    background-color: blue;
+    border-radius: 100%;
+}
+.container{
+    background-color: hsl(0, 0%, 83%);
+
+}
+.col-sm-12{
+
+    border-radius: 8%;
+    border-color: black;
+    background-color: white;
+    width: 45px;
+}
+
